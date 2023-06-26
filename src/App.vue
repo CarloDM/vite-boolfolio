@@ -32,9 +32,9 @@ export default {
 </script>
 <template>
   <div class="main-wrapper">
-    <h3 class="m_1">posts API</h3>
+    <!-- <h3 class="m_1">posts API</h3> -->
 
-    <ul>
+    <!-- <ul>
       <li 
       v-for=" post in posts"
       :key="post.id"
@@ -45,7 +45,7 @@ export default {
 
           </ul>
       </li>
-    </ul>
+    </ul> -->
 
     <h3 class="m_1">posts card</h3>
     <div class="card_container">
