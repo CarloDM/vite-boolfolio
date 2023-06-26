@@ -47,7 +47,7 @@ export default {
       </li>
     </ul> -->
 
-    <h3 class="m_1">posts card</h3>
+    <h2 class="m_1">posts card</h2>
     <div class="card_container">
 
       <ProjectCard

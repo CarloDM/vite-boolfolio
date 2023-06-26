@@ -13,7 +13,7 @@ export default {
 <template>
   <div class="Project-card">
 
-    <h1>{{ title }}</h1>
+    <h3>{{ title }}</h3>
     <p class="date">{{ date }}</p>
     <p class="text">{{ text }}</p>
 
