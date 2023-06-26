@@ -8,16 +8,20 @@ export default {
       posts : null,
     }
   },
+
   methods:{
     getPosts(){
       console.log(this.apiUrl)
       axios.get(this.apiUrl + 'post')
         .then(result =>{
-          console.log(result.data)
+          console.log(result.data);
+          this.posts = result.data;
         })
     }
   },
+
   computed:{},
+
   mounted(){
     this.getPosts()
   },
@@ -26,6 +30,15 @@ export default {
 </script>
 <template>
   <div class="main-wrapper">
+
+    <ul>
+      <li 
+      v-for=" post in posts"
+      :key="post.id"
+      >
+      {{ post.title }}
+      </li>
+    </ul>
 
 
 
