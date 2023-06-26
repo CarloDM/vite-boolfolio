@@ -1,5 +1,6 @@
 <script>
 import axios from 'axios';
+import ProjectCard from './components/ProjectCard.vue'
 export default {
   name:'App',
   data(){
@@ -8,6 +9,7 @@ export default {
       posts : null,
     }
   },
+  components:{ProjectCard,},
 
   methods:{
     getPosts(){
@@ -44,6 +46,19 @@ export default {
           </ul>
       </li>
     </ul>
+
+    <h3 class="m_1">posts card</h3>
+    <div class="card_container">
+
+      <ProjectCard
+      v-for=" post in posts"
+      :key="post.id"
+      :title="post.title"
+      :date="post.date"
+      :text="post.text"
+      />
+
+    </div>
 
   </div>
 </template>
