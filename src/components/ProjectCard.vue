@@ -23,7 +23,7 @@ export default {
 .Project-card{
   background-color: white;
   border: 1px solid black;
-  padding: 5px 5px;
+  padding: 5px 20px;
   margin: 5px 0px;
 
   & h1{}
