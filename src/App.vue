@@ -30,6 +30,7 @@ export default {
 </script>
 <template>
   <div class="main-wrapper">
+    <h3 class="m_1">posts API</h3>
 
     <ul>
       <li 
@@ -37,11 +38,12 @@ export default {
       :key="post.id"
       >
       {{ post.title }}
+          <ul>
+            <li>{{ post.date }}</li>
+
+          </ul>
       </li>
     </ul>
-
-
-
 
   </div>
 </template>
