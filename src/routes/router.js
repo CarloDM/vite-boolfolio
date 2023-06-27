@@ -5,6 +5,7 @@ import postsList from '../pages/posts-list.vue';
 
 const router = createRouter({
     history: createWebHistory(),
+    linkExactActiveClass: 'active',
     routes: [
       {
         path: '/',
@@ -16,7 +17,6 @@ const router = createRouter({
         name: 'postsList',
         component: postsList,
       },
-
     ]
 });
 

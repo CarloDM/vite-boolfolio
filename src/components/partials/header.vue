@@ -18,6 +18,27 @@ export default {
 
   </header>
 </template>
-<style>
+<style lang="scss" scoped>
+ul{
+  display: flex;
+  justify-content: space-around;
+
+  & li{
+
+
+    & a{
+      color: black;
+      font-size: 1.3rem;
+      font-weight: 900;
+      text-transform: uppercase;
+
+      &.active{
+        color: rgb(39, 5, 231);
+      }
+    }
+  }
+}
+
+
 
 </style>
