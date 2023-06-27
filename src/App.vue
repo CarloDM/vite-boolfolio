@@ -32,8 +32,9 @@ export default {
 </script>
 <template>
   <div class="main-wrapper">
+    <router-view></router-view>
 
-    <h2 class="m_1">posts card</h2>
+    <!-- <h2 class="m_1">posts card</h2>
     <div class="card_container">
 
       <ProjectCard
@@ -44,7 +45,7 @@ export default {
       :text="post.text"
       />
 
-    </div>
+    </div> -->
 
   </div>
 </template>
