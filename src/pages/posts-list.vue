@@ -14,6 +14,7 @@ export default {
   components:{ProjectCard},
 
   methods:{
+    
     getPosts(){
       console.log(this.apiUrl)
       axios.get(this.apiUrl + 'post')
@@ -24,13 +25,13 @@ export default {
     },
 
     getAuthors(){
-
       axios.get(this.apiUrl + 'authors')
         .then(result =>{
           console.log(result.data);
           this.authors = result.data;
         })
     },
+
     getPostByAuthor(id){
       console.log('get posts by author');
       axios.get(this.apiUrl + 'post/author-post/' + id)
@@ -40,6 +41,7 @@ export default {
       })
       console.warn('test',this.authors[0].name);
     },
+
   },
 
   computed:{},
