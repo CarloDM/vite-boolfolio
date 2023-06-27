@@ -8,6 +8,7 @@ export default {
     text: String,
     img_pat: String,
     author_id: Number,
+    author_name: String,
   },
 
 }
@@ -18,6 +19,7 @@ export default {
     <h3>{{ title }}</h3>
     <p class="date">{{ date }}</p>
     <p class="text">{{ text }}</p>
+    <p class="text">{{ author_name }}</p>
 
     <img v-if="img_pat"
       class="thumb" :src=" 'http://127.0.0.1:8000/storage/' + img_pat " :alt="img_pat">

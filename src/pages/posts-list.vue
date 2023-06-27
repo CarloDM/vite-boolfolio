@@ -7,7 +7,7 @@ export default {
     return{
       apiUrl: 'http://127.0.0.1:8000/api/',
       posts : null,
-      authors: null,
+      authors: [],
     }
   },
 
@@ -31,16 +31,22 @@ export default {
           this.authors = result.data;
         })
     },
-    getPostByAuthor(){
-      console.log('get post by author');
+    getPostByAuthor(id){
+      console.log('get posts by author');
+      axios.get(this.apiUrl + 'post/author-post/' + id)
+      .then(result =>{
+        console.log(result.data);
+        this.posts = result.data;
+      })
+      console.warn('test',this.authors[0].name);
     },
   },
 
   computed:{},
 
   mounted(){
-    this.getPosts(),
     this.getAuthors()
+    this.getPosts()
   },
 }
 
@@ -59,6 +65,8 @@ export default {
       :text="post.text"
       :img_pat="post.image_path"
       :author_id="post.author_id"
+      :author_name="authors[post.author_id - 1].name"
+
       />
     </div>
 
@@ -67,7 +75,7 @@ export default {
 
       <ul>
         <li v-for=" author in authors" :key="author.id">
-          <button @click="getPostByAuthor">
+          <button @click="getPostByAuthor(author.id)">
             {{ author.name }}
           </button>
         </li>
@@ -77,7 +85,9 @@ export default {
   </div>
 
 </template>
-<style >
-
+<style lang="scss" scoped >
+  button{
+    margin-bottom: 5px;
+  }
 
 </style>
