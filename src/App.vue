@@ -1,37 +1,37 @@
 <script>
-import axios from 'axios';
-import ProjectCard from './components/ProjectCard.vue'
+import Header from './components/partials/header.vue';
 export default {
   name:'App',
   data(){
     return {
-      apiUrl: 'http://127.0.0.1:8000/api/',
-      posts : null,
+      // apiUrl: 'http://127.0.0.1:8000/api/',
+      // posts : null,
     }
   },
-  components:{ProjectCard,},
+  components:{Header,},
 
-  methods:{
-    getPosts(){
-      console.log(this.apiUrl)
-      axios.get(this.apiUrl + 'post')
-        .then(result =>{
-          console.log(result.data);
-          this.posts = result.data;
-        })
-    }
-  },
+  // methods:{
+  //   getPosts(){
+  //     console.log(this.apiUrl)
+  //     axios.get(this.apiUrl + 'post')
+  //       .then(result =>{
+  //         console.log(result.data);
+  //         this.posts = result.data;
+  //       })
+  //   }
+  // },
 
-  computed:{},
+  // computed:{},
 
-  mounted(){
-    this.getPosts()
-  },
+  // mounted(){
+  //   this.getPosts()
+  // },
 
 }
 </script>
 <template>
   <div class="main-wrapper">
+    <Header></Header>
     <router-view></router-view>
 
     <!-- <h2 class="m_1">posts card</h2>
