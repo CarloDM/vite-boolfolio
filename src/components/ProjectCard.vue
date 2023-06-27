@@ -19,7 +19,7 @@ export default {
     <h3>{{ title }}</h3>
     <p class="date">{{ date }}</p>
     <p class="text">{{ text }}</p>
-    <p class="text">{{ author_name }}</p>
+    <p class="author">{{ author_name }}</p>
 
     <img v-if="img_pat"
       class="thumb" :src=" 'http://127.0.0.1:8000/storage/' + img_pat " :alt="img_pat">
@@ -30,13 +30,19 @@ export default {
 .Project-card{
   background-color: white;
   border: 1px solid black;
-  padding: 5px 20px;
+  padding: 10px 20px;
   margin: 5px 0px;
+  border-radius: 10px;
 
   & h1{}
   & .date{}
   & .text{
     margin: 10px 0px;
+  }
+  & .author{
+    font-size: 1.0rem;
+    font-weight: 800;
+    color: rgb(163, 110, 110);
   }
   & .thumb{
     display: block;
