@@ -5,8 +5,6 @@ export default {
 </script>
 <template>
   <header>
-    <h3>header</h3>
-
     <ul>
       <li>
         <router-link :to="{name: 'home' }" class="nav-link">home</router-link>
