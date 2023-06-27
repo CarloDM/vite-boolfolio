@@ -7,6 +7,7 @@ export default {
     return{
       apiUrl: 'http://127.0.0.1:8000/api/',
       posts : null,
+      authors: null,
     }
   },
 
@@ -20,22 +21,35 @@ export default {
           console.log(result.data);
           this.posts = result.data;
         })
-    }
+    },
+
+    getAuthors(){
+
+      axios.get(this.apiUrl + 'authors')
+        .then(result =>{
+          console.log(result.data);
+          this.authors = result.data;
+        })
+    },
+    getPostByAuthor(){
+      console.log('get post by author');
+    },
   },
 
   computed:{},
 
   mounted(){
-    this.getPosts()
+    this.getPosts(),
+    this.getAuthors()
   },
 }
 
 </script>
 <template>
-  <div class="main-wrapper">
+  <div class="post-wrapper">
 
-    <h2 class="m_1">posts card</h2>
     <div class="card_container">
+      <h2 class="m_1">posts list</h2>
 
       <ProjectCard
       v-for=" post in posts"
@@ -44,12 +58,23 @@ export default {
       :date="post.date"
       :text="post.text"
       :img_pat="post.image_path"
+      :author_id="post.author_id"
       />
-
     </div>
 
-  </div>
+    <div class="authors_container">
+      <h2 class="m_1">authors list</h2>
 
+      <ul>
+        <li v-for=" author in authors" :key="author.id">
+          <button @click="getPostByAuthor">
+            {{ author.name }}
+          </button>
+        </li>
+      </ul>
+
+    </div>
+  </div>
 
 </template>
 <style >

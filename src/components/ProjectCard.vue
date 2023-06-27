@@ -7,6 +7,7 @@ export default {
     date: String,
     text: String,
     img_pat: String,
+    author_id: Number,
   },
 
 }
