@@ -17,9 +17,9 @@ export default {
   <div class="Project-card">
 
     <h3>{{ title }}</h3>
-    <p class="date">{{ date }}</p>
-    <p class="text">{{ text }}</p>
-    <p class="author">{{ author_name }}</p>
+    <p  class="date">{{ date }}</p>
+    <p v-html="text" class="text"></p>
+    <p  class="author">{{ author_name }}</p>
 
     <img v-if="img_pat"
       class="thumb" :src=" 'http://127.0.0.1:8000/storage/' + img_pat " :alt="img_pat">
