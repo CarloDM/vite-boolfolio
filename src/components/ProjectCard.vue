@@ -4,6 +4,7 @@ export default {
 
   props:{
     title: String,
+    slug: String,
     date: String,
     text: String,
     img_pat: String,
@@ -16,6 +17,7 @@ export default {
 <template>
   <div class="Project-card">
 
+    <router-link :to="{name: 'post', params: {slug: slug }}">{{ title }}</router-link>
     <h3>{{ title }}</h3>
     <p  class="date">{{ date }}</p>
     <p v-html="text" class="text"></p>

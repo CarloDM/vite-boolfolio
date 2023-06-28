@@ -68,6 +68,7 @@ export default {
       :img_pat="post.image_path"
       :author_id="post.author_id"
       :author_name="authors[post.author_id - 1].name"
+      :slug="post.slug"
       />
     </div>
 
