@@ -17,11 +17,11 @@ export default {
 <template>
   <div class="Project-card">
 
-    <router-link :to="{name: 'post', params: {slug: slug }}">{{ title }}</router-link>
     <h3>{{ title }}</h3>
     <p  class="date">{{ date }}</p>
     <p v-html="text" class="text"></p>
     <p  class="author">{{ author_name }}</p>
+    <router-link :to="{name: 'post', params: { slug: slug }}">leggi</router-link>
 
     <img v-if="img_pat"
       class="thumb" :src=" 'http://127.0.0.1:8000/storage/' + img_pat " :alt="img_pat">
