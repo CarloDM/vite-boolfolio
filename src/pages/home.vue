@@ -5,7 +5,10 @@ export default {
 }
 </script>
 <template>
-  <h1>home page</h1>
+  <div>
+    <h1>home page</h1>
+
+  </div>
 
 
 </template>
